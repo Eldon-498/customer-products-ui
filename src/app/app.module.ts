@@ -5,15 +5,18 @@ import {AuthModule} from "./auth/auth.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
-import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi} from "@angular/common/http";
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {CustomersComponent} from "./dashboard/data/customers/customers.component";
+import {ProductsComponent} from "./dashboard/data/products/products.component";
+import {authorizationInterceptor} from "./auth/interceptors/authorization.interceptor";
 
 
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent],
+  declarations: [AppComponent, DashboardComponent, CustomersComponent, ProductsComponent],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
@@ -24,6 +27,8 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
     RouterOutlet
 
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [provideHttpClient(
+    withInterceptors([authorizationInterceptor])
+  )],
 })
 export class AppModule { }
