@@ -1,0 +1,19 @@
+<div class="dashboard">
+  <header>
+    <h1>Dashboard</h1>
+    <div class="user-info">
+      <span>Welcome, {{ user.user.name }}</span>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </header>
+  <main>
+    <section class="user-details">
+      <h2>User Details</h2>
+      <p>Email: {{ user.user.email }}</p>
+    </section>
+    <div class="components">
+    <customers class="customers-table"></customers>
+    <products class="products-table"></products>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,47 @@
+.dashboard {
+  margin: 0 auto;
+  padding: 20px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-info span {
+  margin-right: 10px;
+}
+button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+section {
+  margin-bottom: 20px;
+}
+
+.components{
+  display: grid;
+  gap: 10px;
+  grid-template-columns:1fr 1fr;
+}
+
+.customers-table,
+.products-table {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .components {
+    flex-direction: column;
+  }
+}

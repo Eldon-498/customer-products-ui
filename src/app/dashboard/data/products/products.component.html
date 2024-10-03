@@ -1,0 +1,17 @@
+<div class="products-container">
+  <h2>Products</h2>
+  <table class="products-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>${{ product.price.toFixed(2) }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
