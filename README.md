@@ -9,7 +9,7 @@ Clone this repo and then run npm install to download dependecies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. This will redirect you to login page.
 
-Use the following as you email and password
+Use the following as your email and password
 
 - **Username:** admin
 - **Email:** kazi@codeparticles.com
