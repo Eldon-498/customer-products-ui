@@ -24,7 +24,8 @@ import {authorizationInterceptor} from "./auth/interceptors/authorization.interc
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     AppRoutingModule,
-    RouterOutlet
+    RouterOutlet,
+    AuthModule
 
   ],
   providers: [provideHttpClient(

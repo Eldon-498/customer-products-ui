@@ -8,7 +8,8 @@ import {AuthEffects} from "./+state/auth.effects";
 import * as fromAuth from './+state/reducers';
 import {LoginComponent} from "./login/login.component";
 import {ReactiveFormsModule} from "@angular/forms";
-import {authorizationInterceptor} from "./interceptors/authorization.interceptor"
+import {loginGuard} from "./guards/login.guard";
+
 
 
 @NgModule({
@@ -22,15 +23,9 @@ import {authorizationInterceptor} from "./interceptors/authorization.interceptor
     EffectsModule.forFeature([AuthEffects])
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
   ],
-  providers: [AuthService,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useValue:authorizationInterceptor,
-    //   multi: true
-    // }
-  ]
+  providers: [AuthService]
 })
 
 export class AuthModule {

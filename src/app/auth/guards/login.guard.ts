@@ -13,7 +13,7 @@ export const loginGuard: CanActivateFn = (route, state) => {
   return store.select(isLoggedIn).pipe(
     tap(loggedIn => {
       if (!loggedIn) {
-        router.navigateByUrl('/login');
+       void router.navigateByUrl('/login');
       }
     })
   );
