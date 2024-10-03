@@ -6,18 +6,22 @@ import {BrowserModule} from "@angular/platform-browser";
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
 import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
+import {RouterOutlet} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DashboardComponent],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AuthModule.forRoot(),
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
+    AppRoutingModule,
+    RouterOutlet
 
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
